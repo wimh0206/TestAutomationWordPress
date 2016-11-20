@@ -39,7 +39,7 @@ namespace TestWordPressFramework.SeleniumHelper
             SeleniumHelper.Register(driver);
             driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan (0,0,timeout));
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["webUrl"]);
+          //  driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["webUrl"]);
             return driver;   
         }
         //close selenium session

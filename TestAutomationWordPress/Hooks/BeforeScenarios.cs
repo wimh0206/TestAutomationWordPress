@@ -17,7 +17,7 @@ namespace TestAutomationWordPress.Hooks
         {
             //TODO: implement logic that has to run before executing each scenario
             Factory.CreateSeleniumSession(ConfigurationManager.AppSettings["Browser"]);
-
+            SeleniumHelper.GoToUrl(ConfigurationManager.AppSettings["WebURL"]);
         }
 
         [AfterScenario]
