@@ -22,7 +22,14 @@ namespace TestWordPressFramework.SeleniumHelper
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
             // return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(xpath)));
             Console.WriteLine("Finding on: " + xpath);
-            return wait.Until(drv => drv.FindElement(By.XPath(xpath)));
+            try
+            {
+                return wait.Until(drv => drv.FindElement(By.XPath(xpath)));
+            }catch(Exception ex)
+            {
+                Console.WriteLine("can not find element " + ex.Message);
+                return null;
+            }
         }
         //Click Element
         public static void Click(String xpath)
@@ -35,10 +42,20 @@ namespace TestWordPressFramework.SeleniumHelper
         {
             Console.WriteLine("Enter value: {0} into {1}", xpath, value);
             FindElement(xpath).Clear();
-            FindElement(xpath).SendKeys(xpath);
+            FindElement(xpath).SendKeys(value);
             FindElement(xpath).SendKeys(Keys.Tab);
         }
 
+        public static void GoToUrl (String url)
+        {
+            Console.WriteLine("Go to Page: " + url);
+            driver.Navigate().GoToUrl(url);
+        }
+
+        public static string GetText(String xpath)
+        {
+            return FindElement(xpath).Text.ToString();
+        }
 
     }
 }

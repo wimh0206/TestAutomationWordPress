@@ -61,6 +61,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Hooks\BeforeScenarios.cs" />
+    <Compile Include="PageObjects\AdminHomePage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminHomePage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PageObjects\LoginPageObjects.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginPageObjects.resx</DependentUpon>
+    </Compile>
     <Compile Include="StepDefinitions\LoginFeaturesSteps.cs" />
     <Compile Include="Tests\LoginFeatures.feature.cs">
       <AutoGen>True</AutoGen>
@@ -82,6 +92,16 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LoginFeatures.feature.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageObjects\AdminHomePage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminHomePage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageObjects\LoginPageObjects.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginPageObjects.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
