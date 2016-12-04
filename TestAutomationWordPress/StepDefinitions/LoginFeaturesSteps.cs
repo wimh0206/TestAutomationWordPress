@@ -1,5 +1,4 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using TestWordPressFramework.SeleniumHelper;
 using TestAutomationWordPress.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

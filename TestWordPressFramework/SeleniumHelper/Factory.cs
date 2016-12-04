@@ -3,18 +3,13 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestWordPressFramework.SeleniumHelper
 {
     public class Factory
     {
-        static IWebDriver driver = null;
+        static IWebDriver driver { get; set; }
         public static int timeout=1000;
         public static IWebDriver CreateSeleniumSession(String Browser)
         {
