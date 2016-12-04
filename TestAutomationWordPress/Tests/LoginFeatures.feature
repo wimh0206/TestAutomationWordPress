@@ -1,7 +1,7 @@
 ﻿Feature: LoginFeatures
 	login into wordpress
 
-@mytag
+@login
 Scenario: Login Succesfull
 	Given I am in Login page
 	And I enter username 'wimh0206'
